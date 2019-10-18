@@ -26,7 +26,7 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func refreshClicked(_ sender: NSMenuItem) {
-        cryptoAPI.getRate(for: "BTC", against: "USD")
+        cryptoAPI.getFullData(for: ["BTC"], against: ["USD"])
     }
     
     @IBAction func quitClicked(_ sender: Any) {
