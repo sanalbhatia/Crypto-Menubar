@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4753C46F233E79F6008674B4 /* CryptoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4753C46E233E79F6008674B4 /* CryptoAPI.swift */; };
 		47AF97572331592A004F51C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF97562331592A004F51C4 /* AppDelegate.swift */; };
 		47AF97592331592A004F51C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF97582331592A004F51C4 /* ViewController.swift */; };
 		47AF975B2331592D004F51C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF975A2331592D004F51C4 /* Assets.xcassets */; };
 		47AF975E2331592D004F51C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AF975C2331592D004F51C4 /* Main.storyboard */; };
+		47AF97672331A632004F51C4 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF97662331A632004F51C4 /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4753C46E233E79F6008674B4 /* CryptoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPI.swift; sourceTree = "<group>"; };
 		47AF97532331592A004F51C4 /* TaskBar-Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskBar-Crypto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AF97562331592A004F51C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47AF97582331592A004F51C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +24,7 @@
 		47AF975D2331592D004F51C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47AF975F2331592D004F51C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47AF97602331592D004F51C4 /* TaskBar_Crypto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskBar_Crypto.entitlements; sourceTree = "<group>"; };
+		47AF97662331A632004F51C4 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,9 @@
 		47AF97552331592A004F51C4 /* TaskBar-Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				4753C46E233E79F6008674B4 /* CryptoAPI.swift */,
 				47AF97562331592A004F51C4 /* AppDelegate.swift */,
+				47AF97662331A632004F51C4 /* StatusMenuController.swift */,
 				47AF97582331592A004F51C4 /* ViewController.swift */,
 				47AF975A2331592D004F51C4 /* Assets.xcassets */,
 				47AF975C2331592D004F51C4 /* Main.storyboard */,
@@ -95,6 +101,11 @@
 				TargetAttributes = {
 					47AF97522331592A004F51C4 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -133,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AF97672331A632004F51C4 /* StatusMenuController.swift in Sources */,
+				4753C46F233E79F6008674B4 /* CryptoAPI.swift in Sources */,
 				47AF97592331592A004F51C4 /* ViewController.swift in Sources */,
 				47AF97572331592A004F51C4 /* AppDelegate.swift in Sources */,
 			);
@@ -271,7 +284,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "TaskBar-Crypto/TaskBar_Crypto.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "TaskBar-Crypto/Info.plist";
@@ -289,7 +301,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "TaskBar-Crypto/TaskBar_Crypto.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "TaskBar-Crypto/Info.plist";
