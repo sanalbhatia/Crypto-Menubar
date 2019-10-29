@@ -16,8 +16,6 @@ class CryptoAPI {
        given currency using the CryptoCompare API
     */
     func getRate(for crypto: String, against currency: String){
-        //price?fsym=BTC&tsyms=USD,JPY,EUR
-        //let session = URLSession.shared
         guard let url = URL(string:
             BASE_URL + "/price?fsym=\(crypto)&tsyms=\(currency)") else {
                 NSLog("Incorrect URL generated")
@@ -50,22 +48,17 @@ class CryptoAPI {
     }
     
     
-    func getFullData(for cryptos: [String], against currencies: [String]){
+    func getFullData(for cryptos: [String], against currency: String){
         //generate strings for URL
         var cryptoString = ""
-        var currencyString = ""
         for crypto in cryptos {
             cryptoString += crypto + ","
         }
-        for currency in currencies {
-            currencyString += currency + ","
-        }
         cryptoString = String(cryptoString[..<cryptoString.endIndex])
-        currencyString = String(currencyString[..<currencyString.endIndex])
         
         //generate URL
         guard let url = URL(string:
-            BASE_URL + "/pricemultifull?fsyms=\(cryptoString)&tsyms=\(currencyString)") else {
+            BASE_URL + "/pricemultifull?fsyms=\(cryptoString)&tsyms=\(currency)") else {
                 NSLog("Incorrect URL generated")
                 return
         }
@@ -86,6 +79,21 @@ class CryptoAPI {
                     if let dataString = String(data: data!, encoding: .utf8) {
                         NSLog(dataString)
                     }
+                    if  let data = data,
+                        let JSONResponse = self.responseFromJSONData(data) {
+                        let coins = self.getCoins(coins: cryptos, from: JSONResponse, using: currency)
+                        for coin in coins {
+                            NSLog(String(describing: coin))
+                            print("Price: \(coin.price)")
+                            print(coin.imageURL)
+                            print(coin.exchangeCurrency)
+                            print(coin.pctChange1hr)
+                            print(coin.pctChange24hr)
+                            print(coin.pctChangeDay)
+                        }
+                    }
+                    //NSLog(String(describing: self.coinFromJSONData(data!)!))
+                    
                 case 401: // unauthorized
                     NSLog("weather api returned an 'unauthorized' response. Did you set your API key?")
                 default:
@@ -95,14 +103,29 @@ class CryptoAPI {
         }
         task.resume()
     }
-}
-
-
-enum Currency {
     
-}
-
-enum Crypto {
     
+    private func responseFromJSONData(_ data: Data) -> Response? {
+        //Decodes JSONresponse into dict format
+        do {
+            let response = try JSONDecoder().decode(Response.self, from: data)
+            return response
+        } catch {
+            print(error)
+            return nil
+        }
+        
+    }
+    
+    private func getCoins(coins: [String], from response: Response,
+                          using currency: String) -> [Coin] {
+        var output: [Coin] = []
+        for coinName in coins {
+            if let coin = response.response[coinName]?[currency] {
+                output.append(coin)
+            }
+        }
+        return output
+    }
 }
 

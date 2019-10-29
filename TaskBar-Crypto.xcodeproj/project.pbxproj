@@ -13,6 +13,8 @@
 		47AF975B2331592D004F51C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF975A2331592D004F51C4 /* Assets.xcassets */; };
 		47AF975E2331592D004F51C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AF975C2331592D004F51C4 /* Main.storyboard */; };
 		47AF97672331A632004F51C4 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF97662331A632004F51C4 /* StatusMenuController.swift */; };
+		47D92A282363335200734062 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D92A272363335200734062 /* Response.swift */; };
+		47F2A8592362140400C1DDB6 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F2A8582362140400C1DDB6 /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		47AF975F2331592D004F51C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47AF97602331592D004F51C4 /* TaskBar_Crypto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskBar_Crypto.entitlements; sourceTree = "<group>"; };
 		47AF97662331A632004F51C4 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		47D92A272363335200734062 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		47F2A8582362140400C1DDB6 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 		47AF97552331592A004F51C4 /* TaskBar-Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				47F2A8582362140400C1DDB6 /* Coin.swift */,
+				47D92A272363335200734062 /* Response.swift */,
 				4753C46E233E79F6008674B4 /* CryptoAPI.swift */,
 				47AF97562331592A004F51C4 /* AppDelegate.swift */,
 				47AF97662331A632004F51C4 /* StatusMenuController.swift */,
@@ -147,6 +153,8 @@
 				47AF97672331A632004F51C4 /* StatusMenuController.swift in Sources */,
 				4753C46F233E79F6008674B4 /* CryptoAPI.swift in Sources */,
 				47AF97592331592A004F51C4 /* ViewController.swift in Sources */,
+				47F2A8592362140400C1DDB6 /* Coin.swift in Sources */,
+				47D92A282363335200734062 /* Response.swift in Sources */,
 				47AF97572331592A004F51C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
