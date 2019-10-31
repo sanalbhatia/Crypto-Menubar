@@ -678,18 +678,22 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="9Yh-Fh-1oP" customClass="StatusMenuController" customModule="TaskBar_Crypto" customModuleProvider="target">
                     <connections>
+                        <outlet property="menuItem" destination="nyB-G7-LVT" id="JY3-Du-pxx"/>
                         <outlet property="statusMenu" destination="8bb-uC-fyl" id="k2t-yF-DDb"/>
                     </connections>
                 </customObject>
                 <menu id="8bb-uC-fyl">
                     <items>
+                        <menuItem title="Coin" id="nyB-G7-LVT">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="Cxq-8a-CQQ"/>
                         <menuItem title="Refresh" id="byj-Cz-v8j">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="refreshClicked:" target="9Yh-Fh-1oP" id="vm9-SU-aac"/>
                             </connections>
                         </menuItem>
-                        <menuItem isSeparatorItem="YES" id="5sx-hp-1cA"/>
                         <menuItem title="Quit" id="oy4-4k-Sn9">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>

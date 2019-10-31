@@ -24,14 +24,6 @@ extension Response {
     // Decoding
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        //let res = try container.n
-        //response = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .response)
-        
-        //testing
-        let test = container.allKeys
-        print("\n\nContainer: \(container)\n\n")
-        print(test)
-        
         response = try container.decode([String:[String:Coin]].self, forKey: .response)
         //display = try container.decode([String:[String:Coin]].self, forKey: .display)
     }

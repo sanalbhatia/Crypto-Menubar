@@ -48,7 +48,7 @@ class CryptoAPI {
     }
     
     
-    func getFullData(for cryptos: [String], against currency: String){
+    func getFullData(for cryptos: [String], against currency: String, success: @escaping ([Coin]) -> Void){
         //generate strings for URL
         var cryptoString = ""
         for crypto in cryptos {
@@ -82,15 +82,7 @@ class CryptoAPI {
                     if  let data = data,
                         let JSONResponse = self.responseFromJSONData(data) {
                         let coins = self.getCoins(coins: cryptos, from: JSONResponse, using: currency)
-                        for coin in coins {
-                            NSLog(String(describing: coin))
-                            print("Price: \(coin.price)")
-                            print(coin.imageURL)
-                            print(coin.exchangeCurrency)
-                            print(coin.pctChange1hr)
-                            print(coin.pctChange24hr)
-                            print(coin.pctChangeDay)
-                        }
+                        success(coins)
                     }
                     //NSLog(String(describing: self.coinFromJSONData(data!)!))
                     
